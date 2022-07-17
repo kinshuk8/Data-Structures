@@ -9,11 +9,11 @@ struct node{
 struct node *start=NULL;    //start pointer will be used for reading the linked list
 struct node *create_ll(struct node *);
 struct node *display_ll(struct node *);
-struct node *insert_beginning(struct node *);
+struct node *insert_before(struct node *);
 struct node *insert_end(struct node *);
 struct node *insert_between(struct node *);
 struct node *delete_beginning(struct node *);
-struct node *delete_between(struct node *);
+struct node *delete_atpos(struct node *);
 struct node *delete_end(struct node *);
 
 int main(){
@@ -24,10 +24,10 @@ int main(){
         printf("\n2. Display List");
         printf("\n3. Insert Node at the Beginning");
         printf("\n4. Insert Node at the End");
-        printf("\n5. Insert Node in Between");
+        printf("\n5. Insert Node Before a Data");
         printf("\n6. Delete Node at the Beginning");
         printf("\n7. Delete Node at the End");
-        printf("\n8. Delete Node in Between");
+        printf("\n8. Delete Node at Position");
         printf("\n9. To Start");
         printf("\nSelect an Option: ");
         scanf("%d",&option);
@@ -41,13 +41,13 @@ int main(){
             break;
             case 4:start=insert_end(start);
             break;
-            case 5:start=insert_between(start);
+            case 5:start=insert_before(start);
             break;
             case 6:start=delete_beginning(start);
             break;
             case 7:start=delete_end(start);
             break;
-            case 8:start=delete_between(start);
+            case 8:start=delete_atpos(start);
             break;
         }
     }while(option!=9);
@@ -114,7 +114,7 @@ struct node *insert_end(struct node *start){
     newnode->next=NULL;
     return start;
 }
-struct node *insert_between(struct node *start){
+struct node *insert_before(struct node *start){
     struct node *newnode,*ptr,*preptr;
     int num,var;
     printf("Enter the Data: ");
@@ -150,7 +150,7 @@ struct node *delete_end(struct node *start){
     free(ptr);
     return start;
 }
-struct node *delete_between(struct node *start){
+struct node *delete_atpos(struct node *start){
     struct node *preptr,*ptr;
     int var;
     printf("Enter the value before where the data has to deleted: ");
