@@ -6,7 +6,7 @@ struct node{
     struct node *next;
 };
 
-struct node *start=NULL;    //start pointer will be used for reading the linked list
+struct node *start=NULL;
 struct node *create_ll(struct node *);
 struct node *display_ll(struct node *);
 struct node *insert_before(struct node *);
