@@ -11,7 +11,7 @@ struct node *create_ll(struct node *);
 struct node *display_ll(struct node *);
 struct node *insert_before(struct node *);
 struct node *insert_end(struct node *);
-struct node *insert_between(struct node *);
+struct node *insert_before(struct node *);
 struct node *delete_beginning(struct node *);
 struct node *delete_atpos(struct node *);
 struct node *delete_end(struct node *);
@@ -160,7 +160,7 @@ struct node *delete_atpos(struct node *start){
         preptr=ptr;
         ptr=ptr->next;
     }   
-    preptr->next=ptr;
+    preptr->next=ptr->next;
     free(ptr);
     return start;
 }
