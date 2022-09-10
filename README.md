@@ -1,1 +1,2 @@
-# DSA
+This Repository contains basic Data Structures and Algorithm codes.
+This mostly contains how to create different types of Data Structures and on how to implement the Algorithms...
