@@ -83,7 +83,7 @@ void in_order(bst *root){
         printf("%d\t",root->data);
         in_order(root->right);
     }
-};
+}
 void pre_order(bst *root){
     if(root!=NULL){
         printf("%d\t",root->data);
